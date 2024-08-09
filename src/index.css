@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@layer base {
+  .flexCenter {
+    @apply flex justify-center items-center;
+  }
+
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+
+  .flexAround {
+    @apply flex justify-around items-center;
+  }
+
+  .imgObject {
+    @apply object-center object-cover;
+  }
+
+  .transitions-300 {
+    @apply transition-all duration-300 ease-linear;
+  }
+
+  .transitions-500 {
+    @apply transition-all duration-500 ease-linear;
+  }
+
+  .imgSelect {
+    @apply select-none pointer-events-none;
+  }
+}
+
+body {
+  font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Roboto, Cantarell, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+header {
+  background: hsla(0, 0%, 100%, 0);
+}
+
+.scrolled-class::before {
+  z-index: -2;
+  display: block;
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background: hsla(0, 0%, 100%, 0) linear-gradient(180deg, #f7faff, rgba(247, 250, 255, 0));
+  pointer-events: none;
+  transition: -webkit-backdrop-filter .25s ease-out;
+  transition: backdrop-filter .25s ease-out;
+  transition: backdrop-filter .25s ease-out, -webkit-backdrop-filter .25s ease-out;
+}
+
+.skewImage {
+  transform: perspective(70rem) rotateY(-25deg) rotateX(8deg);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, .3), 0 30px 60px -30px rgba(0, 0, 0, .5), -10px 10px 60px -10px rgba(103, 178, 111, .3);
+}
+
+.hero-svg {
+  max-width: 180px;
+  width: 100%;
+}
+
+.hero-text-gradient {
+  background: linear-gradient(135deg, #67b26f, #66b274 9.99%, #64b27f 19.07%, #62b28f 27.44%, #5eb1a1 35.26%, #59b1b3 42.72%, #54b1c5 50%, #4fb1d5 57.28%, #4ab1e3 64.74%, #45b0ee 72.56%, #40b0f7 80.93%, #3db0fd 90.01%, #3cb0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.laptop-view {
+  animation: animation 5.2s 3.9s alternate-reverse ease-in-out infinite;
+}
+
+.tablet-view {
+  animation: animation 5.1s 2.9s alternate-reverse ease-in-out infinite;
+}
+
+.mobile-view {
+  animation: animation 5s 1s alternate-reverse ease-in-out infinite;
+}
+
+@keyframes animation {
+  from {
+    transform: translate(-35px, -40px);
+  }
+
+  to {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 1279px) {
+  .skewImage {
+    transform: perspective(0rem) rotateY(0deg) rotateX(0deg);
+  }
+
+  .laptop-view {
+    animation: animation 5.2s 3.9s alternate-reverse ease-in-out infinite;
+  }
+
+  .tablet-view {
+    animation: animation 5.1s 2.9s alternate-reverse ease-in-out infinite;
+  }
+
+  .mobile-view {
+    animation: animation 5s 1s alternate-reverse ease-in-out infinite;
+  }
+
+  @keyframes animation {
+    to {
+      transform: scale(1);
+    }
+
+    from {
+      transform: scale(1.1);
+    }
+  }
+
+}
+
+.bgIconHover:hover {
+  background-color: rgba(0, 124, 165, .13333333333333333);
+}
+
+.catelog {
+  --white: #fff;
+  --fill: #0a1530;
+  position: absolute;
+  right: -10px;
+  top: 50px;
+  text-align: left;
+  color: #000;
+  background: hsla(0, 0%, 100%, .9450980392156862);
+  -webkit-backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  border-radius: .5rem;
+  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, .15), 0 50px 100px -20px rgba(50, 50, 93, .3), 0 30px 60px -30px rgba(0, 0, 0, .5), -10px 10px 60px -10px rgba(103, 178, 111, .3);
+  display: flex;
+  flex-direction: column;
+  width: min(calc(100vw - 40px), 25rem);
+  justify-content: flex-start;
+  align-items: stretch;
+  line-height: 1.5;
+  white-space: normal;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: opacity .25s ease-in-out, transform .25s ease-in-out .1s;
+}
+
+.catelog::before {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  right: 17px;
+  border: 10px solid transparent;
+  border-bottom-color: hsla(0, 0%, 100%, .9333333333333333);
+}
+
+.herderfeatureDropdown {
+  --white: #fff;
+  --fill: #0a1530;
+  position: absolute;
+  z-index: 10;
+  top: 35px;
+  text-align: left;
+  color: #000;
+  background: hsla(0, 0%, 100%, .9450980392156862);
+  -webkit-backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  border-radius: .5rem;
+  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, .15), 0 50px 100px -20px rgba(50, 50, 93, .3), 0 30px 60px -30px rgba(0, 0, 0, .5), -10px 10px 60px -10px rgba(103, 178, 111, .3);
+  display: flex;
+  width: 28rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  line-height: 1.75;
+  white-space: normal;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.herderfeatureDropdown::before {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  left: 70px;
+  z-index: 20;
+  border: 10px solid transparent;
+  border-bottom-color: hsla(0, 0%, 100%, .9333333333333333);
+}
+
+
+
+
+.headercustomerdropdown {
+  --white: #fff;
+  --fill: #0a1530;
+  position: absolute;
+  z-index: 10;
+  top: 35px;
+  text-align: left;
+  color: #000;
+  background: hsla(0, 0%, 100%, .9450980392156862);
+  -webkit-backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  backdrop-filter: blur(5px) brightness(200%) saturate(200%);
+  border-radius: .5rem;
+  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, .15), 0 50px 100px -20px rgba(50, 50, 93, .3), 0 30px 60px -30px rgba(0, 0, 0, .5), -10px 10px 60px -10px rgba(103, 178, 111, .3);
+  display: flex;
+  width: 36rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  line-height: 1.75;
+  white-space: normal;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.headercustomerdropdown::before {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  z-index: 20;
+  border: 10px solid transparent;
+  border-bottom-color: hsla(0, 0%, 100%, 0.933);
+}
+
+
+/*  Feature Dropdown's Arrow SvgIcon */
+.transitionToIcon {
+  transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+  transform: translateY(-1px) translateX(-.5rem);
+  opacity: 0;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: repeating-conic-gradient(rgba(0, 0, 0, .06666666666666667) 0 .0001%, transparent 0 .0002%), #0a1530 url(https://polypane.app/static/10-297837550aa30dce051dd55891825b16.jpgg) top / cover;
+  background: #0a1530 url(https://polypane.app/static/10-297837550aa30dce051dd55891825b16.jpg) top / cover;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .15), inset 0 0 8px rgba(0, 0, 0, .15), inset 0 20px 30px rgba(0, 0, 0, .175);
+}
